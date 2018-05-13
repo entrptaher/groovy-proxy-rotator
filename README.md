@@ -44,10 +44,12 @@ pm2 restart proxy
 
 ### Start without configuring any json file or pm2
 
-Provide PROXYPORT and PROXIES like below and run the rotator
+Provide `PROXYPORT` and `PROXIES` like below and run the rotator
 ```
 PROXYPORT=56000 PROXIES='[{"host": "IP", "port": 60000}]' npm start
 ```
+
+The proxy will run at port `56000`.
 
 ### Internal Proxy Authentication
 If you want to protect your proxy from being abused by public, then you might as well add some simple authentication.

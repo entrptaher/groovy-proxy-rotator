@@ -1,0 +1,31 @@
+{
+  "name": "goose-proxy-rotator",
+  "version": "0.1.0",
+  "description": "Simple proxy rotator",
+  "scripts": {
+    "start": "bin/proxy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redco/goose-proxy-rotator.git"
+  },
+  "keywords": [
+    "proxy",
+    "rotator",
+    "goose"
+  ],
+  "author": {
+    "name": "Andrew Reddikh",
+    "email": "andrew@reddikh.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/redco/goose-proxy-rotator/issues"
+  },
+  "homepage": "https://github.com/redco/goose-proxy-rotator#readme",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "minimist": "^1.2.0",
+    "p-queue": "^2.2.0"
+  }
+}

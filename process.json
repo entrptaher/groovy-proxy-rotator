@@ -1,0 +1,12 @@
+{
+  "apps": [
+    {
+      "name": "proxy",
+      "script": "bin/proxy",
+      "args": "--file=proxies.json",
+      "env": {
+        "PROXYPORT": 60000
+      }
+    }
+  ]
+}

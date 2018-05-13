@@ -1,7 +1,11 @@
 # groovy-proxy-rotator
 Simple proxy rotator
 
-This is derived from https://github.com/redco/goose-proxy-rotator, I've improved it and added some more configuration information.
+This is derived from the following,
+- https://github.com/entrptaher/groovy-proxy-rotator-old 
+- https://github.com/redco/goose-proxy-rotator
+
+I've improved it and added some more configuration information.
 
 ## Usage
 

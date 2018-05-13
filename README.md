@@ -16,19 +16,21 @@ npm i -g pm2
 npm install
 ```
 
-5. create a new file called `proxies.json` with following content, the file must be a valid JSON.
+5. create a new file called `proxies.json` with following content, the file must be a valid JSON. Assuming there are some proxies running at `127.0.0.1:10000` and `127.0.0.1:20000`, the file will look like below.
+
 ```json
 [
     {
-       "host":"PROXY IP HERE",
-       "port":"PROXY PORT HERE"
+       "host":"127.0.0.1",
+       "port":10000
     }, 
     {
-       "host":"PROXY IP HERE",
-       "port":"PROXY PORT HERE"
+       "host":"127.0.0.1",
+       "port":20000
     }
 ]
 ```
+
 6. Save it and launch with `pm2`.
 ```
 pm2 start process.json

@@ -12,7 +12,7 @@ function readIpFile(filePath) {
       (err, data) => {
         if (err) {
           console.log(err);
-          resolve([]);
+          return resolve([]);
         }
         resolve(JSON.parse(data))
       }

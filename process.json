@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "proxy",
-      "script": "bin/proxy",
+      "script": "index.js",
       "instances": "max",
       "exec_mode": "cluster",
       "env": {

@@ -6,11 +6,9 @@ const http = require("http");
 const net = require("net");
 const url = require("url");
 const path = require("path");
-const PQueue = require("p-queue");
 
 const argv = require("minimist")(process.argv.slice(2));
 const proxyPort = process.env.PROXYPORT || 60000;
-const queue = new PQueue({ concurrency: 1 });
 const retryDelay = process.env.RETRY_DELAY || 1000;
 const maxRetries = process.env.MAX_RETRIES || 3;
 

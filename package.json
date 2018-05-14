@@ -25,7 +25,6 @@
   "homepage": "https://github.com/redco/goose-proxy-rotator#readme",
   "dependencies": {
     "debug": "^2.2.0",
-    "minimist": "^1.2.0",
-    "p-queue": "^2.2.0"
+    "minimist": "^1.2.0"
   }
 }

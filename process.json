@@ -4,6 +4,8 @@
       "name": "proxy",
       "script": "bin/proxy",
       "args": "--file=proxies.json",
+      "instances" : "max",
+      "exec_mode" : "cluster",
       "env": {
         "PROXYPORT": 60000
       }

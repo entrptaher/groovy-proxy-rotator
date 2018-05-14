@@ -7,6 +7,8 @@ This is derived from the following,
 
 I've improved it and added some more configuration information.
 
+NOTE: THE LAST DEPLOYMENT IS NOT DOCUMENTED. WAIT TILL IT IS DOCUMENTED.
+
 ## Usage
 
 1. Clone the repo.

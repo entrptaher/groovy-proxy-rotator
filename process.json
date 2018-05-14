@@ -3,11 +3,11 @@
     {
       "name": "proxy",
       "script": "bin/proxy",
-      "args": "--file=proxies.json",
-      "instances" : "max",
-      "exec_mode" : "cluster",
+      "instances": "max",
+      "exec_mode": "cluster",
       "env": {
-        "PROXYPORT": 60000
+        "proxy_list": "data/proxies.json",
+        "proxy_port": 60000
       }
     }
   ]

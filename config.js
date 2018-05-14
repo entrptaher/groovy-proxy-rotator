@@ -10,8 +10,8 @@ module.exports = {
   retry_delay: getFromClient("retry_delay") || 1000,
   max_retries: getFromClient("max_retries") || 3,
   ip_filter: {
-    check_ip: true,
+    check_ip: getFromClient("check_ip") || true,
     default_action: true,
-    whitelist_file: getFromClient("whitelist_file") || "data/whilelist.json"
+    whitelist_file: getFromClient("whitelist_file") || "data/whitelist.json"
   }
 };

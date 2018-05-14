@@ -22,7 +22,7 @@ npm i -g pm2
 npm install
 ```
 
-5. create a new file called `proxies.json` with following content, the file must be a valid JSON. Assuming there are some proxies running at `127.0.0.1:10000` and `127.0.0.1:20000`, the file will look like below.
+5. You must create a new file called `data/proxies.json` with following content, the file must be a valid JSON. Assuming there are some proxies running at `127.0.0.1:10000` and `127.0.0.1:20000`, the file will look like below.
 
 ```json
 [
@@ -37,14 +37,23 @@ npm install
 ]
 ```
 
-6. Save it and launch with `pm2`.
+6. If you want to whitelist certain IP, then create a file `data/whitelist.json` and put data in an array. By default it will allow all traffic. If you keep the list empty, it'll also allow all traffic, but if there is any ip in the list, then filtering will be enabled. If you want to keep the list but disable the filter, then edit the process.json and add an argument called `check_ip` inside `env` or `args`, 
+
+```
+[
+    "192.168.0.8", "::ffff:192.168.0.8"
+]
+```
+You must provide ipv6 address if the client you are using is ipv6.
+
+7. Save it and launch with `pm2`.
 ```
 pm2 start process.json
 ```
 
 Check on `http://YOURSERVERIP:60000` for your proxy with rotation.
 
-If you ever want to change and reload proxies, then edit proxies file and reload the pm2 process for `proxy`,
+If you ever want to change and reload proxies, then edit proxies file and reload the pm2 process for `proxy`, check `process.json` and `config.js` for more details.
 
 ```
 pm2 restart proxy

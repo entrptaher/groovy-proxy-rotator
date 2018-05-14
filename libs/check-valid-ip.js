@@ -2,7 +2,7 @@ const getClientIP = require("./get-client-ip");
 const argv = require("minimist")(process.argv.slice(2));
 const fs = require("fs");
 const path = require("path");
-const config = require('../config');
+const config = require("../config");
 
 function readIpFile(filePath) {
   return new Promise((resolve, reject) => {
@@ -10,8 +10,11 @@ function readIpFile(filePath) {
       path.resolve(__dirname, `../${filePath}`),
       "utf8",
       (err, data) => {
-        if (err) return reject(err);
-        resolve(data);
+        if (err) {
+          console.log(err);
+          resolve([]);
+        }
+        resolve(JSON.parse(data))
       }
     );
   });
@@ -33,10 +36,11 @@ async function checkValidIP(req) {
     }
     // read the json consisting ip list every time
     // so we don't have to reload and can change json file on fly
-    
+
     // TODO: use watchers instead
 
     const allowed = await readIpFile(allowedIPListFile);
+    console.log(`IP filters loaded: ${allowed.length}`);
     if (allowed.length) {
       // allow only if list has the specific ip
       const clientIP = getClientIP(req);
@@ -46,6 +50,7 @@ async function checkValidIP(req) {
       return isUserAllowed;
     }
     // allow access by default if no ip mentioned
+    console.log({defaultAccess});
     return defaultAccess;
   } catch (e) {
     console.log(e);

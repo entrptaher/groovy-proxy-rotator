@@ -10,7 +10,7 @@ function getClientIP(req) {
       req.headers["x-forwarded-for"] ||
       ""
     ).split(",")[0] || req.client.remoteAddress
-  );
+  ).replace(/^.*:/, '');
 };
 
 module.exports = getClientIP;

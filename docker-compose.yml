@@ -1,0 +1,19 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  web:
+    build: .
+    ports:
+      - "60000:60000"
+    environment: 
+      - proxy_list=data/proxies.json
+      - whitelist_file=data/whitelist.json
+      - proxy_port=60000
+      - PROXY_USER=${PROXY_USER}
+      - PROXY_PASSWORD=${PROXY_PASSWORD}
+    command: yarn start
+    volumes:
+      - yarn_cache:/yarn
+      - ./data:/app/data
+
+volumes:
+  yarn_cache:

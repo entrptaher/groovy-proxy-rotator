@@ -36,7 +36,7 @@ async function checkAuth(req, res) {
   const authHeader =
     req.headers.authorization || req.headers["proxy-authorization"];
   const b64auth = (authHeader || "").split(" ")[1] || "";
-  const [login, password] = new Buffer(b64auth, "base64").toString().split(":");
+  const [login, password] = Buffer.from(b64auth, "base64").toString().split(":");
 
   if (
     !login ||
@@ -141,7 +141,7 @@ const getOptions = (request, { port, host, auth }, ssl) => {
     headers: request.headers || {}
   };
   if (auth) {
-    options.headers["Proxy-Authorization"] = `Basic ${new Buffer(auth).toString(
+    options.headers["Proxy-Authorization"] = `Basic ${Buffer.from(auth).toString(
       "base64"
     )}`;
   }

@@ -1,7 +1,6 @@
 **/proxy.json
 **/proxies.json
 **/whitelist.json
-**/.env*
 
 # Logs
 logs
